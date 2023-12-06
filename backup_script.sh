@@ -67,7 +67,7 @@ for source_dir in "${source_directories[@]}"; do
 done
 
 # Rsync
-rsync -a --delete "$backup_parent_dir" digitaluser@161.35.137.255:"/mnt/volume_nyc3_01/backup-importnt/" >> "$log_file" 2>&1
+rsync -a --delete "$backup_parent_dir" digitaluser@161.35.137.255:"/mnt/volume_nyc3_01/backup-important/" >> "$log_file" 2>&1
 
 if [ $? -eq 0 ]; then
     log_message "Rsync successful."
