@@ -9,7 +9,9 @@
 # 1. Customize the directories, usernames, and other details.
 # 2. Make the script executable: chmod +x backup_script.sh
 # 3. Run the script: ./backup_script.sh
-#
+# 4. If the manual test is successful, set up a cron job to
+#    run the script daily at 2:00 AM using the following cron entry:
+#    0 2 * * * /path/to/your/script.sh
 # Note: Ensure that necessary permissions and configurations
 # are set for MySQL backup and rsync to work correctly.
 ###########################################################
