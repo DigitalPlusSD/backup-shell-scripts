@@ -14,9 +14,9 @@
 # are set for MySQL backup and rsync to work correctly.
 ###########################################################
 # MySQL database connection details
-mysql_backup_dir="/home/kashta/backup-import/mysql"
+mysql_backup_dir="/path/to/backupdir/"
 source_directories=("/var/www" "/etc/nginx/sites-available" "/etc/apache2/sites-available")
-backup_parent_dir="/home/kashta/backup-import/d"
+backup_parent_dir="/path/to/backupdir/"
 log_file="$backup_parent_dir/backup_log.txt"
 
 # Function to log messagessudo apt-get install php8.1 php8.1-fpm php8.1-mysql php8.1-mbstring php8.1-xml php8.1-gd php8.1-curl php8.1-bcmath php8.1-xml php8.1-cli
