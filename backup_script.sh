@@ -19,7 +19,7 @@ source_directories=("/var/www" "/etc/nginx/sites-available" "/etc/apache2/sites-
 backup_parent_dir="/path/to/backupdir/"
 log_file="$backup_parent_dir/backup_log.txt"
 
-# Function to log messagessudo apt-get install php8.1 php8.1-fpm php8.1-mysql php8.1-mbstring php8.1-xml php8.1-gd php8.1-curl php8.1-bcmath php8.1-xml php8.1-cli
+# Function to log messages
 log_message() {
     echo "$(date +"%Y-%m-%d %H:%M:%S") $1" >> "$log_file"
 }
@@ -36,6 +36,7 @@ for database in $databases; do
 
     if [ $? -eq 0 ]; then
         log_message "MySQL Backup successful for database: $database. File: $backup_file"
+        ls -t "$mysql_backup_dir/${database}_backup_"*.sql | tail -n +4 | xargs rm -f
     else
         log_message "MySQL Backup failed for database: $database."
     fi
